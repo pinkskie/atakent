@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>
+    <title>Atakent</title>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header container">
+        <div class="header__info">
+            <div class="header__leftdesk">
+                <div>
+                    <a href="#">Как доехать ?</a>
+                    <a href="#">Закупки</a>
+                </div>
+                <div class="header__soc">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14">
+                        <image id="digital" 
+                            width="14" 
+                            height="14" 
+                            xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAACY0lEQVQokVWSTWgTURDH//P27eZjkyZNYpVii+3BD0QFRUGhehCxiBcreKhf2B4U7Unw2IPiVTyIFRRFUC89iBbEgxUtihbE0qLQg/TQFjTFJG2aZJPdfbsjm9ZY32HeDMzMf+b3Hj2+1IvWPeFYbql2bV2zeUIIymDtYQBUj0tgvPk6PXfz/vBEVgJo0oQcW5+KtfvsPWLIuZXs/4oCP0PAud3b2nq2dMzvpZGhs7eiociZqelf+7ZvTs9KaaCmqghpYfzOl5FOmvVaIjpUqi4XErGmJ5Wq+iDMcOQU4N3paIvPwmc4jg3btXQwd1Usp1u5fnPJXYLQaCRhJgaU4uuCcCQYdQNIm4nHTCjHhSDsTEbSzwFs6mxPKwCKnOgVyyofyOadbGdbqlVqIiPqWzCzbXtYXFKGboReMGPS9VWLxVacfR4MGZGHujSMlpSZB68AEA1+DJhRvQvgjc9eTfZ/+5EtAHAB/zbAH6WUvdGI3oAl65YI4bAAmGMA7NPHdpQ8j6A8G06ZYMSQI03E176SaGAPLqJxALqn0K8U1+m6yt9KEt2qVn3vVsoridRQDMQIXHEWOKxflbp2T2jokdS0KDPyOBijJELDurG6GdcVqeJVawm3WITr+EGHIQYOgjEjhazBx2VmPqmg/ALnsOwVkyBUBTOP5S3v/N2X3zWGDsigFz6xzwPM6AP4KQieFDomvhSR++n11Wx7gkYfXNhFQv+8UCi/TRqRG0ZMzIOIwbxKMDAMVsiQRgNEuFiq5Q9LBk8x8/6WlDlIRK8BNP8l/e+vEkiiojx3nJR/1NQj7/4Al2wQok2v8LAAAAAASUVORK5CYII="/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8" height="15" viewBox="0 0 8 15">
+                        <image id="_3" 
+                            data-name="3" 
+                            width="8" 
+                            height="15" 
+                            xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAPCAYAAADZCo4zAAAA90lEQVQYlXWPvUpDQRCFv9ldTKpEULS4REHBwk6wCYQ8QJ7IRmJrJ/gQlha+g9imUKt0thYBCwt3R+burmwKB/aHb86ZH1kuj/iLr8P9+fnFdSJOnXivyjqcjM5qWg667hFh5vAZCKehGx/X/FScm1W1wrtG/QgizpLGLo3a93sTb2VHrhQlZHN/D3oBMBz5lb0xZkEHWJndIjTDHuhEhJ8A8goyptqz4t6Oc/qcW2ibLCMCKaZ1QOQGdAAyB12UgR6AlfPuxSrcFVcCFr1beULERDZkU77tVNqGLVhXNlZ42Jq9rNmyUOF/EZoNP1F9szIp6aYnwC8q4UkcFLX3qQAAAABJRU5ErkJggg=="/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21" height="14" viewBox="0 0 21 14">
+                        <image id="_36" 
+                            data-name="36" 
+                            width="21" 
+                            height="14"     
+                            xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAOCAYAAADABlfOAAAB70lEQVQ4jW2Tv2sUURDHvzPv5Xbv5CKBBHJEhRRimgOPNCmM2FmJ+Rf09A+wF2xtrGwlGIuAIEg604gEFYLpTZNgEX/lAga9jbvJ3hu53dvbeecNLMybefN58747j14/aiOcJnBIMy5xDyaqfAOgSYwzAUB+nAAnkC89hxd/vsevTK8CO8gtGKa3tmYa/UIpC4aW8RgQyeM+n5qWcet8I1jtHsg9ayZP2VbCdQCNrIAAUuCimAYLKogj+b6x4bvn5twWh7XgNltq6cK+Q2O6HVIwgKPsusgx030GyZLen31+J2sCbIC8cLbQMg19ostsLCaU6Pn1VZsEWRVgRUSWj46jj95PIk+JwjdcEvwNOsC582Fnb/+aQK4LZJ0IZ7nGeRekJGMZXGrMtHh2Eie42VyQ+EjeJ4l7CcHPUgfx5GCvkkq9tKW9NM8yrQRTtBMGZkOAC7oLUtpaCNzoQOo5dIJ5Ip6pVuxDNnR1mJByZjWZBGK7h263Pmu8cdLiMtFzkCk1pv9hosZRgG/mMIp2lxfn7xBQ18ARdh7TefXn9QF/j9OnvHjl4kkS99oCnOpd3ksqIOrAQiYN7PyKtj/tHTyxS81LSFN5Y9Oz1tdO1J6brbcMTLU4QL+W0etmIRL53U1+1GvB5uf9ztrjZ+/ify2AzNICXuxGAAAAAElFTkSuQmCC"/>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14">
+                        <image id="Слой_7" 
+                            data-name="Слой 7" 
+                            width="14" 
+                            height="14" 
+                            xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAB+0lEQVQokZWSy2tTURDGz5l7b/OybdqSxHgt8UFIS2KLtkiLKVlod0YwWly4kIoPLGSvgmt34iKgC4vFVaELxboSRSiolPgAI6ZobGI0SRujtrmNNsk5c+RU8wfcbzl8vxlmvqHvMsXgrfvJmR/VPwFKCFBKhRCCEkoFkRKCtmocBe/psGXjE6OTNH5jPpktrQ0TE/Jtd76FQsXwm4GkihVjL2gKqGZByahNjpz8G/+yw95WWC6tjbudjsxIaOe9/Mp68Hkqf6Gn055xbrOlOKI7V/p1iHHkciJIcNDvXZiKjU4cj4SuFyrV0Ng+XyIyuOs2JURMnRg5czY6FBvu059Kr6oAAEexdb3Hi5/imkXRj4UDN3d7u1JICKnVGzh+0H93KLDjhQok/GDhw1XplYwSjJy8wjhaGEfNqG16wgO9cwN+fdrlakfd07Xa73PNMwJk5tHrxNfyev/Wjio0QAbWWvrZm+zpJ6+Wz9ebDD/myoQjty59+X5YICOT0QMXe92dS9Ing1X6wrHLHIWlBSfT344atbouiKimP5fH7jxMztosWlEIYVit2kY6Wz4CQOv01LXZjdpm02EmDrtF+w0NxpnZHJscGXi723NmQU+3I0/fZ1f3J+YWp1d+GnvaVEWT3VSggP9fHCgBhoLLb2kwZC6nLX8pGjz3F5Ge3hBCxht0AAAAAElFTkSuQmCC"/>
+                    </svg>                  
+                </div>
+                <img class="logo" src="assets/LOFO ATAKENT.png" alt="logo"/>
+            </div>
+            <div class="header__lang">
+                <a href="#">RU</a>
+                <a href="#">KZ</a>
+            </div>
+        </div>
+        <nav class="header__nav">
+            <ul class="header__list">
+                <li><a href="#">главная</a></li>
+                <li><a href="#"><span style="color: #ff005f;">магазин</span></a></li>
+                <li><a href="#">развлечение</a></li>
+                <li><a href="#">услуги</a></li>
+                <li><a href="#">фудкорт</a></li>
+                <li><a href="#">каркара сити</a></li>
+                <li><a href="#">студент</a></li>
+                <li><a href="#">atakent mall</a></li>
+                <li><a href="#">карта трц</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+    <!-- hero -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero__title">
+                    <div>
+                        <h1><span style="color:#ff005f">shop</span>ping</h1>
+                        <p>Atakent Mall — самый эксклюзивный торговый центр и развлекательный центр. <br/>
+                            в районе, который известен своими высококлассными магазинами и ресторанами</p>
+                    </div>
+                    <button class="hero__btn">Перейти</button>
+                </div>
+            </div>
+        </section>
+        <!-- partners -->
+        <section class="partners">
+            <div class="partners__content container">
+                <div class="partners__links">
+                    <img src="assets/partners/kp.png">
+                </div>
+                <div class="partners__links">
+                    <img src="assets/partners/graviti-11.png">
+                </div>
+                <div class="partners__links">
+                    <img src="assets/partners/logo-2.png">
+                </div>
+                <div class="partners__links">
+                    <a href="#">карта</a>
+                </div>
+                <div class="partners__links">
+                    <a href="#">shop<span style="color:white">ping</span></a>
+                </div>
+                <div class="partners__links">
+                    <a href="#"><span style="color:#00382c">развлечение</span></a>
+                </div>
+                <div class="partners__links">
+                    <a href="#">Наши объекты</a>
+                </div>
+                <div class="partners__links">
+                    <a href="#">кафетерий</a>
+                </div>
+            </div>
+        </section>
+        <!-- TЦ -->
+        <section class="tc container">
+            <h1>Мы больше чем торговый центр!</h1>
+            <div class="tc__content"> 
+                <div>
+                    <img src="assets/happy.jpg" alt="happy"/>
+                    <h3>Зона развлечения</h3>
+                    <p>AtakentMall — это прекрасное место для встречи с друзьями и веселого провождение времени</p>
+                    <button class="tc__btn">Перейти</button>
+                </div>
+                <div>
+                    <img src="assets/hat.jpg" alt="hat"/>
+                    <h3>Зона моды</h3>
+                    <p>Атакент Mall рад всем, кто любит шопинг. На трех этажах ТРЦ расположились более 2000 товаров</p>
+                    <button class="tc__btn">Перейти</button>
+                </div>
+                <div>
+                    <img src="assets/sport.jpg" alt="sport"/>
+                    <h3>Зона спорта</h3>
+                    <p>У нас Вы можете отдохнуть активно  всей семьей посетив спортзал или стрелковый клуб Target</p>
+                    <button class="tc__btn">Перейти</button>
+                </div>
+            </div>
+        </section>
+        <!-- Stock -->
+        <section class="stock">
+            <div class="container">
+                <h1>Акции и события</h1>
+                <div class="stock__top">
+                    <!-- Тут надо а  -->
+                    <button class="stock__btn">Все</button>
+                    <button class="stock__btn">Акции</button>
+                </div>
+                <div class="stock__content">
+                    <div>
+                    <img src='assets/stock/purple.jpg'/>
+                        <p>Горячие распродажи: <br/>Скидки до</p>
+                        <a href="#">Программа скидок</a>
+                    </div>
+                    <div>
+                        <img src='assets/stock/casual.jpg'/>
+                        <p>вкусный кофе для вас в кафетериях ТРЦ ATAKENT MALL</p>
+                        <a href="#">Еда и напитки</a>
+                    </div>
+                    <div>
+                        <img src='assets/stock/little.jpg'/>
+                        <p>для деток безумный день в BALA-LAND</p>
+                        <a href="#">Развлечения</a>
+                    </div>
+                    <div>
+                        <img src='assets/stock/bags.jpg'/>
+                        <p>Горячие распродажи: <br>Скидки до</p>
+                        <a href="#">Программа скидок</a>
+                    </div>
+                </div>
+                <div class="stock__bottom">
+                    <button class="stock__btn">Смотреть все собития</button>
+                    <div class="mobile">
+                        <p>Подпишись на рассылку *</p>
+                        <button class="stock__btn">Отправить</button>
+                    </div>
+                </div>
+            </div> 
+        </section>
+        <!-- store -->
+        <section class="store">
+            <div class="container">
+                <h1>Магазины и услуги</h1>
+                <div class="store__top">
+                    <a class="store__links">Магазины</a>
+                    <a class="store__links">Развлечения</a>
+                    <a class="store__links">Фудкорт</a>
+                    <a class="store__links">Услуги</a>
+                </div>
+                <div class="store__content">
+                    <div class="store__info">
+                        <img src='assets/store/mi.jpg' class="store__img">
+                        <img src="assets/store/mi-logotype.png" class="store__logo"/>
+                        <p>Магазин компьютерных аксессуаров</p>
+                    </div>
+                    <div class="store__info">
+                        <img src='assets/store/flo.jpg' class="store__img"/>
+                        <img src="assets/store/flo-logo.png" class="store__logo"/>
+                        <p>FLO - магазин обуви для мужчин, женщин и детей</p>
+                    </div>
+                    <div class="store__info">
+                        <img src='assets/store/kari.jpg' class="store__img"/>
+                        <img src="assets/store/kari-logo.png" class="store__logo"/>
+                        <p>kari - это нечно больше, чем магазин обуви</p>
+                    </div>
+                    <div class="store__info">
+                        <img src='assets/store/gravity.jpg' class="store__img"/>
+                        <img src="assets/store/graviti-logo.png" class="store__logo"/>
+                        <p>Батутный парк «Gravity» для всей семьи</p>
+                    </div>
+                </div>
+                <div class="store__bottom">
+                    <a class="store__links" style="margin-top: 3em;">Смотреть все магазины</a>
+                </div>
+            </div>
+        </section>
+        <!-- Kinopark -->
+        <section class="kinopark">
+            <div class="container">
+                <div class="kinopark__title">
+                    <h1>Кинотеатр Kinopark</h1>
+                    <img src="assets/kp LOGO.png" alt="kp"/>
+                </div>
+                <div class="kinopark__grid">
+                    <div class="kinopark__info">
+                        <img src="assets/raya-goriz-21-scaled.png" alt='raya'/>
+                        <div class="kinopark__content">
+                            <p>Райя и последний дракон</p>
+                            <button class="kinopark__btn">Смотреть расписание</button>
+                        </div>
+                    </div>
+                    <div class="kinopark__info mobile">
+                        <img src="assets/raya-goriz-21-scaled.png" alt='raya'/>
+                        <div class="kinopark__content">
+                            <p>Райя и последний дракон</p>
+                            <button class="kinopark__btn">Смотреть расписание</button>
+                        </div>
+                    </div>
+                    <div class="kinopark__info mobile">
+                        <img src="assets/raya-goriz-21-scaled.png" alt='raya'/>
+                        <div class="kinopark__content">
+                            <p>Райя и последний дракон</p>
+                            <button class="kinopark__btn">Смотреть расписание</button>
+                        </div>
+                    </div>
+                    <div class="kinopark__info mobile">
+                        <img src="assets/raya-goriz-21-scaled.png" alt='raya'/>
+                        <div class="kinopark__content">
+                            <p>Райя и последний дракон</p>
+                            <button class="kinopark__btn">Смотреть расписание</button>
+                        </div>
+                    </div>
+                    <button class="kinopark__btnSecondary">Смотреть все расписание</button>
+                </div>
+            </div>
+        </section>
+        <!-- app -->
+        <section class="app">
+            <div class="container">
+                <h1>Оставить заявку</h1>
+                <p>Для получения более подробной информации оставьте заявку и мы свяжемся с вами</p>
+                <form class="app__form">
+                    <input type="text" placeholder="Ф.И.О"/>
+                    <input type="text" placeholder="Email"/>
+                    <input type="text" placeholder="Номер телефона"/>
+                    <button>Отправить</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="footer container">
+        <nav class="footer__nav">
+            <ul class="footer__list">
+                <li><a href="#">главная</a></li>
+                <li><a href="#"><span style="color: #ff005f;">магазин</span></a></li>
+                <li><a href="#">развлечение</a></li>
+                <li><a href="#">услуги</a></li>
+                <li><a href="#">фудкорт</a></li>
+                <li><a href="#">каркара сити</a></li>
+                <li><a href="#">студент</a></li>
+                <li><a href="#">atakent mall</a></li>
+                <li><a href="#">карта трц</a></li>
+            </ul>
+        </nav>
+        <div class="footer__info">
+            <p>Atakent Mall - самый эксклюзивный<br/>торговый центр и развлекательный центр.<br/>
+                Расположенный в районе, который<br/>известен своими высококлассными<br/>магазинами и ресторанами</p>
+            <img src="assets/LOFO ATAKENT.png" alt="logo"/>
+            <div>
+                <span>Контакты</span>
+                <p>г.Алматы, ул. Тимирязева 42 <br/>Ежедневно, с 10:00 до 22:00 <br/>info@atakentmall.kz <br/> +7 (727) 275 43 13</p>
+            </div> 
+        </div>
+        <p style='text-align: center; font-size: 0.75em;'>Copyright ©2020-2021 ATAKENT</p>
+    </footer>
+</body>
+</html>
