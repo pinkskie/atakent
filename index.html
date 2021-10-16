@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <title>Atakent</title>
 </head>
 <body>
@@ -112,57 +114,69 @@
         <!-- TЦ -->
         <section class="tc container">
             <h1>Мы больше чем торговый центр!</h1>
-            <div class="tc__content"> 
-                <div>
-                    <img src="assets/happy.jpg" alt="happy"/>
-                    <h3>Зона развлечения</h3>
-                    <p>AtakentMall — это прекрасное место для встречи с друзьями и веселого провождение времени</p>
-                    <button class="tc__btn">Перейти</button>
+            <div class="swiper swiper-1">
+                <div class="tc__content swiper-wrapper"> 
+                    <div class="swiper-slide">
+                        <img src="assets/happy.jpg" alt="happy"/>
+                        <h3>Зона развлечения</h3>
+                        <p>AtakentMall — это прекрасное место для встречи с друзьями и веселого провождение времени</p>
+                        <button class="tc__btn">Перейти</button>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="assets/hat.jpg" alt="hat"/>
+                        <h3>Зона моды</h3>
+                        <p>Атакент Mall рад всем, кто любит шопинг. На трех этажах ТРЦ расположились более 2000 товаров</p>
+                        <button class="tc__btn">Перейти</button>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="assets/sport.jpg" alt="sport"/>
+                        <h3>Зона спорта</h3>
+                        <p>У нас Вы можете отдохнуть активно  всей семьей посетив спортзал или стрелковый клуб Target</p>
+                        <button class="tc__btn">Перейти</button>
+                    </div>
                 </div>
-                <div>
-                    <img src="assets/hat.jpg" alt="hat"/>
-                    <h3>Зона моды</h3>
-                    <p>Атакент Mall рад всем, кто любит шопинг. На трех этажах ТРЦ расположились более 2000 товаров</p>
-                    <button class="tc__btn">Перейти</button>
-                </div>
-                <div>
-                    <img src="assets/sport.jpg" alt="sport"/>
-                    <h3>Зона спорта</h3>
-                    <p>У нас Вы можете отдохнуть активно  всей семьей посетив спортзал или стрелковый клуб Target</p>
-                    <button class="tc__btn">Перейти</button>
-                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination swiper-pagination-1"></div>
+                
+                <!-- If we need navigation buttons -->
+                <!-- <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div> -->
             </div>
         </section>
         <!-- Stock -->
         <section class="stock">
-            <div class="container">
+            <div class="container ">
                 <h1>Акции и события</h1>
                 <div class="stock__top">
                     <!-- Тут надо а  -->
                     <button class="stock__btn">Все</button>
                     <button class="stock__btn">Акции</button>
                 </div>
-                <div class="stock__content">
-                    <div>
-                    <img src='assets/stock/purple.jpg'/>
-                        <p>Горячие распродажи: <br/>Скидки до</p>
-                        <a href="#">Программа скидок</a>
+                <div class="swiper swiper-2">
+                    <div class="stock__content swiper-wrapper">
+                        <div class="swiper-slide">
+                        <img src='assets/stock/purple.jpg'/>
+                            <p>Горячие распродажи: <br/>Скидки до</p>
+                            <a href="#">Программа скидок</a>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src='assets/stock/casual.jpg'/>
+                            <p>вкусный кофе для вас в кафетериях ТРЦ ATAKENT MALL</p>
+                            <a href="#">Еда и напитки</a>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src='assets/stock/little.jpg'/>
+                            <p>для деток безумный день в BALA-LAND</p>
+                            <a href="#">Развлечения</a>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src='assets/stock/bags.jpg'/>
+                            <p>Горячие распродажи: <br>Скидки до</p>
+                            <a href="#">Программа скидок</a>
+                        </div>
                     </div>
-                    <div>
-                        <img src='assets/stock/casual.jpg'/>
-                        <p>вкусный кофе для вас в кафетериях ТРЦ ATAKENT MALL</p>
-                        <a href="#">Еда и напитки</a>
-                    </div>
-                    <div>
-                        <img src='assets/stock/little.jpg'/>
-                        <p>для деток безумный день в BALA-LAND</p>
-                        <a href="#">Развлечения</a>
-                    </div>
-                    <div>
-                        <img src='assets/stock/bags.jpg'/>
-                        <p>Горячие распродажи: <br>Скидки до</p>
-                        <a href="#">Программа скидок</a>
-                    </div>
+                    <div class="swiper-button-prev swiper-button-prev-2"></div>
+                    <div class="swiper-button-next swiper-button-next-2"></div>
                 </div>
                 <div class="stock__bottom">
                     <button class="stock__btn">Смотреть все собития</button>
@@ -290,5 +304,6 @@
         </div>
         <p style='text-align: center; font-size: 0.75em;'>Copyright ©2020-2021 ATAKENT</p>
     </footer>
+    <script src="app.js"></script>
 </body>
 </html>
